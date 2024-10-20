@@ -24,3 +24,25 @@ Iterate through the string to find the first character with a count of 1.
 Bonus (Optional):
 Try to solve the problem in O(n) time complexity, where n is the length of the string
 '''
+
+
+def find_first_non_repeating_char(s):
+    occurrences = {}
+
+    for i in s:
+        if i in occurrences:
+            occurrences[i] += 1
+#            print(occurrences)
+        else:
+            occurrences[i] = 1
+#            print(occurrences)
+    
+    for i in s:
+        if occurrences[i] == 1:
+#            print(occurrences)
+            return i
+        
+    return None
+
+s = input("")
+print(find_first_non_repeating_char(s))
